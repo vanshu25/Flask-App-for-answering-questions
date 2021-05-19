@@ -18,7 +18,8 @@ This is a flask app that performs question-answering on various pdf files. You c
 > To download this pre-trained model, run the following in python :
   
   >> from cdqa.utils.download import download_model
-  >> download_model(model='bert-squad_1.1', dir='./models')
+  &nbsp;
+     download_model(model='bert-squad_1.1', dir='./models')
 
 ### Templates
 
