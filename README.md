@@ -27,7 +27,7 @@ This is a flask app that performs question-answering on various pdf files. You c
 
 ### qa.py
 
-* In this python file, we are hav used the pre trained model which is present in 'models' folder to fit the pdf files.
+* In this python file, we have used the pre trained model which is present in 'models' folder to fit the pdf files.
 * We have imported packages like pandas, cdqa, etc. So, you must download these packages.
 * First, we have converted the pdf files to pandas dataframe by using 'pdf_converter' which we have imported from 'cdqa.utils.converters'
 * Then, we have used 'QAPipeline' which we have imported from 'cdqa.pipeline'. It will create question-answering pipeline and fit our documents.
