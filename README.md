@@ -40,9 +40,9 @@ This is a flask app that performs question-answering on various pdf files. You c
 
  We have defined a function in this file: <br>
    > def home(): <br>
-     > data1 = request.form['a'] <br>
-     > pred = cdqa_pipeline.predict(data1,3) <br>
-     > return render_template('after.html', data=pred) <br>
+      data1 = request.form['a'] <br>
+      pred = cdqa_pipeline.predict(data1,3) <br>
+      return render_template('after.html', data=pred) <br>
     
 * Here the first line is fetching the question that you have asked.
 * Second line id=s predicting the questions's answer and as you notice we have two parameters here in predict() where data1 obviously is the question that has been asked and the numerical value 3 means that we will get top 3 answers of the given question.
