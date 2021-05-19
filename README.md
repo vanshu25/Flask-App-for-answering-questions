@@ -23,13 +23,29 @@ This is a flask app that performs question-answering on various pdf files. You c
 
 * Create a folder named "templates" and here we are gonna add our html files for the app. I have added two files here - home.html and after.html
 
-### app.py
-
-* This is the python file for the flask app
-
 ### qa.py
 
-* This is the python file for the fitting of model.
+* In this python file, we are hav used the pre trained model which is present in 'models' folder to fit the pdf files.
+* We have imported packages like pandas, cdqa, etc. So, you must download these packages.
+* First, we have converted the pdf files to pandas dataframe by using 'pdf_converter' which we have imported from 'cdqa.utils.converters'
+* Then, we have used 'QAPipeline' which we have imported from 'cdqa.pipeline'. It will create question-answering pipeline and fit our documents.
+* At last, we have used 'joblib' which is a set of tools to provide lightweight pipelining in Python.
+
+
+### app.py
+
+* This is the python file to run flask app where we have specified routes.
+
+We have defined a function in this file:
+  def home():
+    data1 = request.form['a']
+    pred = cdqa_pipeline.predict(data1,3)
+    return render_template('after.html', data=pred) 
+    
+* Here the first line is fetching the question that you have asked.
+* Second line id=s predicting the questions's answer and as you notice we have two parameters here in predict() where data1 obviously is the question that has been asked and the numerical value 3 means that we will get top 3 answers of the given question.
+* And the last line is just to return the 'after.html' page where we can see the answer.
+
 
 Your Project directory should look like this:
 
@@ -40,4 +56,7 @@ Your Project directory should look like this:
 * Activate your virtual environment and then run 'flask run'
 * You can then go to the localhost on which the app is running.
 
-# explain the three top answers and libraries by each folder above
+![](https://github.com/vanshu25/Tryout_Project-Flask-App-for-answering-questions/blob/main/images/Screenshot%20(206).png)
+
+![](https://github.com/vanshu25/Tryout_Project-Flask-App-for-answering-questions/blob/main/images/Screenshot%20(207).png)
+
