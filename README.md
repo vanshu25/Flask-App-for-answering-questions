@@ -18,8 +18,8 @@ This is a flask app that performs question-answering on various pdf files. You c
  
  To download this pre-trained model, run the following in python : <br>
   
-   from cdqa.utils.download import download_model <br>
-   download_model(model='bert-squad_1.1', dir='./models')
+   > from cdqa.utils.download import download_model <br>
+   > download_model(model='bert-squad_1.1', dir='./models')
 
 ### Templates
 
@@ -39,10 +39,10 @@ This is a flask app that performs question-answering on various pdf files. You c
 * This is the python file to run flask app where we have specified routes.
 
  We have defined a function in this file: <br>
-   def home(): <br>
-     data1 = request.form['a'] <br>
-     pred = cdqa_pipeline.predict(data1,3) <br>
-     return render_template('after.html', data=pred) <br>
+   > def home(): <br>
+     > data1 = request.form['a'] <br>
+     > pred = cdqa_pipeline.predict(data1,3) <br>
+     > return render_template('after.html', data=pred) <br>
     
 * Here the first line is fetching the question that you have asked.
 * Second line id=s predicting the questions's answer and as you notice we have two parameters here in predict() where data1 obviously is the question that has been asked and the numerical value 3 means that we will get top 3 answers of the given question.
